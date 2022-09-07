@@ -1,0 +1,22 @@
+//button buat passing data AddDumm.php
+<a class="fas fa-plus-circle fa-2x aqua-gradient-text mr-2">
+				<input type="submit" name="test" value="" class="fas fa-plus-circle fa-2x aqua-gradient-text mr-2"
+				onclick="">
+				</a>
+
+//function button diatas
+elseif(isset($_POST['test'])) {
+	$id_menu = $_POST['id_menu'];
+	echo "<script type='text/javascript'>
+    window.open('http://localhost/PWPraktikum/KP_512Bakery/AddDumm.php','_self');</script>";
+}
+
+Notice: Undefined index: banyak in C:\xampp\htdocs\PWPraktikum\KP_512Bakery\cobalagi.php on line 242
+
+Notice: Trying to access array offset on value of type bool in C:\xampp\htdocs\PWPraktikum\KP_512Bakery\cobalagi.php on line 244
+Notice: Trying to access array offset on value of type bool in C:\xampp\htdocs\PWPraktikum\KP_512Bakery\cobalagi.php on line 244
+
+
+Notice: Trying to access array offset on value of type bool in C:\xampp\htdocs\PWPraktikum\KP_512Bakery\cobalagi.php on line 244
+
+Warning: mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in C:\xampp\htdocs\PWPraktikum\KP_512Bakery\cobalagi.php on line 244

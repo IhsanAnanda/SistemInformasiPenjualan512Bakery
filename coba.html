@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    .content {
+  min-height: 100vh;
+  height: auto;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-collapse {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+}
+
+@media(min-width: 1440px) {
+  .content {
+    padding-left: 250px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-3">
+  <!-- Sidebar -->
+    <div class="sidebar-fixed">
+
+      <a class="logo-wrapper waves-effect">
+        <img src="https://mdbootstrap.com/img/logo/mdb-email.png" class="img-fluid" alt="">
+      </a>
+
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item active waves-effect">
+          <i class="fas fa-chart-pie mr-3"></i>Dashboard
+        </a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-user mr-3"></i>Profile</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-table mr-3"></i>Tables</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-map mr-3"></i>Maps</a>
+        <a href="#" class="list-group-item list-group-item-action waves-effect">
+          <i class="fas fa-money-bill-alt mr-3"></i>Orders</a>
+      </div>
+
+    </div>
+    <!-- Sidebar -->
+  </div>
+    <div class="col-md-9">.col-md-9
+    </div>
+  </div>
+</div>
+  
+
+  <script type="text/javascript">
+$(document).ready(function() {
+  let isOpen = false;
+  let $windowWidth = $( window ).width();
+  const $btnCollapse = $(".button-collapse");
+  const $content = $('#content');
+
+  $( window ).resize(function() {
+
+    $windowWidth = $( window ).width();
+    if($windowWidth > 1440) {
+      $content.css('padding-left', '250px');
+      if(isOpen) {
+        $btnCollapse.css('left', '0');
+        isOpen = false;
+      }
+    } else if($windowWidth < 530 && isOpen) {
+      $btnCollapse.css('left', '0');
+      $content.css('padding-left', '0');
+      $('#sidenav-overlay').css('display', 'block');
+      $btnCollapse.trigger('click');
+    } else {
+      if(!isOpen) {
+        $content.css('padding-left', '0');
+      }
+    }
+  });
+
+  // SideNav Button Initialization
+  $btnCollapse.sideNav();
+
+  $btnCollapse.on('click', () => {
+   isOpen = !isOpen;
+   if($windowWidth > 530) {
+    const elPadding = isOpen ? '250px' : '0';
+    $btnCollapse.css('left', elPadding);
+     $content.css('padding-left', elPadding);
+    $('#sidenav-overlay').css('display', 'none');
+   } else {
+    $('#sidenav-overlay').on('click', () => {
+      isOpen = !isOpen;
+    });
+   }
+  });
+  $('#sidenav-overlay').on('click', () => {
+    isOpen = !isOpen;
+  });
+});
+  </script>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
